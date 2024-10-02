@@ -1,6 +1,8 @@
 package myapp;
 
 import java.io.Console;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelloWorld{
     
@@ -69,7 +71,7 @@ public class HelloWorld{
         
         for (Integer pI : numbers){
             System.out.println(pI);
-        }*/
+        }
 
         if (args.length > 0){
             String[] names = new String[5];
@@ -90,6 +92,21 @@ public class HelloWorld{
 
         } else {
             System.out.println("No argument passed");
+        } */
+        List<String> names = new ArrayList<>();
+
+        String input = "";
+        do {
+            input = console.readLine("Enter a name: ");
+            if (!input.equals("quit")) {
+                names.add(input);
+            }
+
+        } while (!input.equals("quit"));
+
+        // print out the names
+        for(String name: names) {
+            System.out.println(name);
         }
     }
 }
